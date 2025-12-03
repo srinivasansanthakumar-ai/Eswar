@@ -1,5 +1,6 @@
 import React from 'react';
 import { RESUME_DATA } from './constants';
+import Header from './components/Header';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Timeline from './components/Timeline';
@@ -31,7 +32,8 @@ const Footer = () => (
 
 function App() {
   return (
-    <div className="min-h-screen w-full bg-slate-50 font-sans selection:bg-blue-200 selection:text-blue-900">
+    <div className="min-h-screen w-full bg-slate-50 font-sans selection:bg-blue-200 selection:text-blue-900 scroll-smooth">
+        <Header />
         <Hero data={RESUME_DATA} />
         <Skills data={RESUME_DATA} />
         <Timeline data={RESUME_DATA} />

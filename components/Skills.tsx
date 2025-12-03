@@ -9,7 +9,7 @@ const SkillCard = ({ title, skills, icon: Icon, delay }: { title: string, skills
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay }}
-        className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow"
+        className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
     >
         <div className="flex items-center gap-3 mb-4">
             <div className="p-3 bg-blue-50 text-blue-600 rounded-lg">
@@ -19,7 +19,7 @@ const SkillCard = ({ title, skills, icon: Icon, delay }: { title: string, skills
         </div>
         <div className="flex flex-wrap gap-2">
             {skills.map((skill, idx) => (
-                <span key={idx} className="px-3 py-1 bg-slate-50 text-slate-600 rounded-full text-sm font-medium border border-slate-200">
+                <span key={idx} className="px-3 py-1 bg-slate-50 text-slate-700 rounded-full text-sm font-medium border border-slate-200 hover:border-blue-200 hover:bg-blue-50 transition-colors cursor-default">
                     {skill}
                 </span>
             ))}
@@ -29,11 +29,12 @@ const SkillCard = ({ title, skills, icon: Icon, delay }: { title: string, skills
 
 const Skills: React.FC<{ data: ResumeData }> = ({ data }) => {
     return (
-        <section className="py-20 bg-slate-50 px-6 lg:px-20">
+        <section id="skills" className="py-24 bg-slate-50 px-6 lg:px-20">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold text-slate-900 mb-4">Technical Proficiency</h2>
-                    <p className="text-slate-500 max-w-2xl mx-auto">A comprehensive overview of my technical abilities, tools I use, and soft skills I bring to the table.</p>
+                    <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Technical Proficiency</h2>
+                    <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full mb-4"></div>
+                    <p className="text-slate-500 max-w-2xl mx-auto text-lg">A comprehensive overview of my technical abilities, tools I use, and soft skills I bring to the table.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
